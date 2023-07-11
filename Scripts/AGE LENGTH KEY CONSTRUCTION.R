@@ -7,6 +7,7 @@
 library(FSA)
 library(FSAdata)
 library(plotrix)
+library(dplyr)
 
 # Load in data
 data = readxl::read_excel("Data/JoeMasterData.xlsx", 
