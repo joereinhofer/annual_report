@@ -8,6 +8,34 @@ library(FSA)
 library(FSAdata)
 library(plotrix)
 
+# Load in data
+data = readxl::read_excel("Data/JoeMasterData.xlsx", 
+                                           col_types = c("numeric", "numeric", "text", 
+                                                         "text", "text", "text", "text", "text", 
+                                                         "numeric", "numeric", "text", "text", 
+                                                         "numeric", "text", "numeric", "text", 
+                                                         "text", "numeric", "numeric", "text", 
+                                                         "numeric", "numeric", "text", "text", 
+                                                         "numeric", "text", "text", "numeric", 
+                                                         "numeric", "numeric", "numeric", 
+                                                         "numeric", "numeric", "numeric", 
+                                                         "text", "numeric", "text", "text", 
+                                                         "numeric", "text", "numeric", "numeric", 
+                                                         "numeric", "numeric", "numeric", 
+                                                         "numeric", "numeric", "numeric", 
+                                                         "numeric", "numeric", "numeric", 
+                                                         "numeric", "numeric", "numeric", 
+                                                         "numeric", "numeric", "numeric", 
+                                                         "numeric", "numeric", "numeric", 
+                                                         "numeric", "numeric", "numeric", 
+                                                         "numeric", "numeric", "text", "numeric", 
+                                                         "numeric"))
+
+# Clean data
+Age_length_key_data = data %>%
+  filter(Species == "WSH") %>%
+  rename(TL = `TL (mm)`, Age = `O FINAL AGE`) %>%
+  select(TL, Age)
 
 WSH.age <- subset(Age_length_key_data, !is.na(Age)) # gets fish without NAs in age variable
                                                     # '!' does the reverse meaning of the function
@@ -74,7 +102,7 @@ lines(mean~fact2num(Age), data=WSH.sum, col="red", lwd=2)
 
 library(plotrix)
 histStack(TL~Age, data=WSH.comb, breaks=seq(170,700,10), xlab="Total Length (mm)", 
-                                      main = "Saugeye (WSH)", legend.pos = c(0.5,0.5))
+                                      main = "Saugeye (WSH)", legend.pos = "topright")
 # Different colors indicate age
 #   Shows how much of the total for that length are a given age
 #   You can add a legend but the placement keeps covering parts of the figure 
