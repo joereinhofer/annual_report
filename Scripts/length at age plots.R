@@ -5,9 +5,15 @@
 # DECATUR ########
 library(ggplot2)
 library(tidyverse)
-data=age_at_length_figures_for_lakes
 
-ggplot(age_at_length_figures_for_lakes, aes(x=wsfage, y=tl))+
+# Load in data
+data = readxl::read_excel("Data/JoeMasterData.xlsx")
+
+# Clean data
+age_at_length_figures_for_lakes = data %>%
+  filter(`Water Body` == "Decatur", Species == "WAE")
+
+ggplot(age_at_length_figures_for_lakes, aes(x=`WS FINAL AGE`, y=`TL (mm)`))+
         geom_point()+ geom_smooth(se = FALSE) +
         ggtitle("Lake Decatur")+
         xlab("Age") + ylab("Total Length (mm)")+  # note in report they are WS ages
