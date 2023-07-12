@@ -114,7 +114,7 @@ plot(TL~jitter(Age), data=WSH.comb, ylab="Total Length (mm)", xlab="Age (jittere
 
 library(plotrix)
 histStack(TL~Age, data=WSH.comb, breaks=seq(170,700,10), xlab="Total Length (mm)", 
-          main = "Saugeye (WSH)", legend.pos = "topright")
+          main = "Female Saugeye (WSH)", legend.pos = "topright")
 # Different colors indicate age
 #   Shows how much of the total for that length are a given age
 #   You can add a legend but the placement keeps covering parts of the figure 
