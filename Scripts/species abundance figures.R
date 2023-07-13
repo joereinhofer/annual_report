@@ -1,7 +1,10 @@
 # ABUNDANCE FIGURE BY SPECIES (THIS CODE IS FOR SAUGER)
 
-# I added a sheet in excel that contained only the sauger lengths
-# The sauger data could probably be isolated within R, but this was easier for now
+# N=104
+
+library(ggplot2)
+library(dplyr)
+
 
 #  Load in data
 data = readxl::read_excel("Data/JoeMasterData.xlsx")
@@ -22,4 +25,7 @@ ggplot(Joe_Cool_water_fishes_data_Joe, aes(x=SAR_bins))+
                                        geom_bar()+
                                        xlab("Length Bins (mm)")+
                                        ylab("Frequency")+
-                                       ggtitle("Sauger")
+                                       ggtitle("Sauger (SAR)")+
+                                   scale_y_continuous(breaks =  seq(0, 60, 10))+
+                                    theme_bw()+
+                                theme(plot.title = element_text(hjust = 0.5))
