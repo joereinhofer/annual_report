@@ -108,7 +108,7 @@ plot(TL~jitter(Age), data=WSH.comb, ylab="Total Length (mm)", xlab="Age (jittere
 # Plotting the fish as points
 # Jitter added so fish with same metrics aren't graphed directly on top one another
 #   Just for making the concetration of points more visible in an age category
-# lines(mean~fact2num(Age), data=WSH.sum, col="red", lwd=2)
+lines(mean~Age, data=WSH.sum, col="blue", lwd=2)
 #    Trying to add mean age at lengths line but not working
 #    Error: 'object' is not a factor or character anddoes not fit the purpose of this function.
 
