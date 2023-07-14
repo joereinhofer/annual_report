@@ -27,7 +27,7 @@ ggplot(Joe_Cool_water_fishes_data_Joe, aes(x=SAR_bins))+
                                        ylab("Frequency")+
                                        ggtitle("Sauger (SAR)")+
                                    scale_y_continuous(breaks =  seq(0, 60, 10))+
-                                    theme_bw()+
+                                    theme_classic()+
                                 theme(plot.title = element_text(hjust = 0.5))
 ###############################################################################
 
@@ -58,7 +58,7 @@ ggplot(Joe_Cool_water_fishes_data_Joe, aes(x=WAE_bins))+
   ylab("Frequency")+
   ggtitle("Walleye (WAE)")+
   scale_y_continuous(breaks =  seq(0, 250, 20))+
-  theme_bw()+
+  theme_classic()+
   theme(plot.title = element_text(hjust = 0.5))
 ################################################################################
 
@@ -88,5 +88,5 @@ ggplot(Joe_Cool_water_fishes_data_Joe, aes(x=WSH_bins))+
   ylab("Frequency")+
   ggtitle("Saugeye (WSH)")+
   scale_y_continuous(breaks =  seq(0, 400, 50))+
-  theme_bw()+
+  theme_classic()+
   theme(plot.title = element_text(hjust = 0.5))
