@@ -31,6 +31,12 @@ lengths = DecaturWAE %>%
 
 # PLOTTING
 ggplot(lengths, aes(x=sizeclass, fill= year))+  # fill=year is to fill the bars different colors based on the year.
-  geom_bar(position = position_dodge())  # position=position_dodge is what makes the grouped bars in each bin.
+  geom_bar(position = position_dodge())+  # position=position_dodge is what makes the grouped bars in each bin.
+  theme_classic()+
+  ggtitle("Lake Decatur Walleye")+
+  theme(plot.title = element_text(hjust = 0.5))+
+  xlab("Length Bins (mm)")+
+  ylab("Frequency")
+  
 
 
