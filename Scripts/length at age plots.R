@@ -37,7 +37,7 @@ data = readxl::read_excel("Data/JoeMasterData.xlsx")
 age_at_length_figures_for_lakes = data %>%
   filter(`Water Body` == "Decatur", Species == "WAE")
 
-plot_age_at_length(age_at_length_figures_for_lakes)
+plot_age_at_length(age_at_length_figures_for_lakes, "Lake Decatur Walleye") 
 
           
           
