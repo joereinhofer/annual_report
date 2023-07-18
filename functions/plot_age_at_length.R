@@ -3,7 +3,7 @@ plot_age_at_length = function(data, title){
     geom_point()+ geom_smooth(se = FALSE) +
     ggtitle(title)+
     xlab("Age (Whole Spine)") + ylab("Total Length (mm)")+  # note in report they are WS ages
-    scale_x_continuous(breaks =  seq(0,11,1), limits = c(0,11))+
+    scale_x_continuous(breaks =  seq(0,10,1), limits = c(0,11))+
     scale_y_continuous(breaks =  seq(100, 750,50), limits = c(100,750))+
     theme_classic()+ 
     theme(plot.title = element_text(hjust = 0.5))
