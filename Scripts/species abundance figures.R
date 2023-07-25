@@ -1,7 +1,7 @@
 # ABUNDANCE FIGURE BY SPECIES 
 
 
-# Sauger (SAR)##########
+# Sauger (SAR)################
 
 # N=104
 
@@ -16,6 +16,10 @@ Joe_Cool_water_fishes_data_Joe = data %>%
   filter(Species == "SAR") %>%
   rename(SAR = `TL (mm)`)
 
+summary(data$`TL (mm)`)
+mean(data$`TL (mm)`)
+# Mean = 322.67 mm
+# Range = 169 - 506 mm
 #Placing the data into size bins
 Joe_Cool_water_fishes_data_Joe = mutate(Joe_Cool_water_fishes_data_Joe, 
                SAR_bins = cut(SAR, breaks = seq(0,800,100))) # seq(min value, max value, bin sizes)
@@ -29,6 +33,9 @@ ggplot(Joe_Cool_water_fishes_data_Joe, aes(x=SAR_bins))+
                                    scale_y_continuous(breaks =  seq(0, 60, 10))+
                                     theme_classic()+
                                 theme(plot.title = element_text(hjust = 0.5))
+
+# scale_x_continuous(breaks =  seq(0, 10, 1), limits = c(0, 10))+
+# scale_y_continuous(breaks =  seq(0, 750, 50), limits = c(100, 750))+
 ###############################################################################
 
 
