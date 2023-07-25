@@ -39,6 +39,8 @@ age_at_length_figures_for_lakes = data %>%
 
 plot_age_at_length(age_at_length_figures_for_lakes, "Lake Decatur Walleye") 
 
-          
+
+
+
           
         
