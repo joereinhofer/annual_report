@@ -22,7 +22,7 @@ ggplot(age_at_length_figures_for_lakes, aes(x=`WS FINAL AGE`, y=`TL (mm)`))+
                      theme_classic()+ 
                      theme(plot.title = element_text(hjust = 0.5))
   
-#############################################
+####################################################################
 
 
 
@@ -35,9 +35,9 @@ data = readxl::read_excel("Data/JoeMasterData.xlsx")
 
 # Clean data
 age_at_length_figures_for_lakes = data %>%
-  filter(`Water Body` == "Decatur", Species == "WAE")
+  filter(`Water Body` == "Dawson", Species == "WSH")
 
-plot_age_at_length(age_at_length_figures_for_lakes, "Lake Decatur Walleye") 
+plot_age_at_length(age_at_length_figures_for_lakes, "Dawson Lake Saugeye") 
 
           
           

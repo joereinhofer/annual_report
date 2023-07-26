@@ -95,7 +95,7 @@ hist(~Age, data=WSH.comb, breaks=0:10, xlim=c(0,11), ylim=c(0,400), xlab="Age (y
                                                                        #    the figure or in description
 plot(TL~jitter(Age), data=WSH.comb, ylab="Total Length (mm)", 
                     xlab="Age (Otolith) (jittered)", 
-                    main="Saugey (WSH)", ) 
+                    main="Saugey (WSH)") 
 lines(mean~Age, data=WSH.sum, col="blue", lwd=2)
 # Plotting the fish as points
 # Jitter added so fish with same metrics aren't graphed directly on top one another
@@ -113,6 +113,7 @@ histStack(TL~Age, data=WSH.comb, breaks=seq(170,700,10), xlab="Total Length (mm)
 ##############################################################
 
 # Plotting WSH.comb with ggplot for length at age
+library(ggplot2)
 ggplot(WSH.comb, aes(x=Age, y=TL))+
 geom_point()+ geom_smooth(se = FALSE) +
   ggtitle("All Saugeye")+
