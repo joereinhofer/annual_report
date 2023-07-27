@@ -32,26 +32,30 @@ data = readxl::read_excel("Data/JoeMasterData.xlsx",
 
 # Clean data
 ages = data %>%
-   filter(Species == "WAE", `Water Body` == "Decatur")%>%
+   filter(Species == "WSH", `Water Body` == "Dawson")%>%
    select('WS FINAL AGE')%>%
    remove_missing()
 
 summary(ages)
 std.error(ages)
-sd(ages)
-# Mean = 2.4 ± 0.11 yrs
-# Range = 0-8 yrs
-# SE = 0.11
+nrow(ages)
+# Mean = 
+# Range = 
+# SE = 
+
+# ages = mutate(ages, grouped_ages = cut('WS FINAL AGE', breaks = seq(0,8,1)))
 
 
-ggplot(ages, aes(x='WS FINAL AGE'))+
-       geom_bar()+
-      labs(title = "Lake Decatur", caption = "Mean = 2.4 ± 0.11 yrs, Range = 0-8 yrs")+
-     theme(plot.title = element_text(hjust = 0.5))
+ggplot(ages, aes(x=`WS FINAL AGE`))+
+      geom_bar() +
+      labs(title = "Dawson Lake", caption = "Mean = 3.5 ± 0.1 yrs, Range = 1-11 yrs")+
       theme_classic()+
-      xlab("Age (yrs)")+ ylab("Frequency")
+      theme(plot.title = element_text(hjust = 0.5))+
+      scale_x_continuous(labels = seq(0, 11, 1), breaks=seq(0,11,1))+
+      scale_y_continuous(limits = c(0,120), breaks = seq(0,120, 10))+
+      xlab("Whole Spine Age (yrs)")+ ylab("Frequency")
       
       
-  
+
   
  
