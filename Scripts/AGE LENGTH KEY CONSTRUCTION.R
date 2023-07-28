@@ -109,6 +109,7 @@ histStack(TL~Age, data=WSH.comb, breaks=seq(170,700,10), xlab="Total Length (mm)
                                       main = "Saugeye (WSH)", legend.pos = "topright")
 # Different colors indicate age
 #   Shows how much of the total for that length are a given age
+<<<<<<< HEAD
 #   You can add a legend but the placement keeps covering parts of the figure 
 ##############################################################
 
@@ -122,3 +123,6 @@ geom_point()+ geom_smooth(se = FALSE) +
   scale_y_continuous(breaks =  seq(0, 750, 50), limits = c(100, 750))+
   theme_classic()+ 
   theme(plot.title = element_text(hjust = 0.5))
+=======
+#   You can add a legend but the placement keeps covering parts of the figure 
+>>>>>>> 79a884f621d5ba7941e004db6b1931bf8ff59ea0

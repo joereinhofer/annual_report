@@ -35,9 +35,15 @@ data = readxl::read_excel("Data/JoeMasterData.xlsx")
 
 # Clean data
 age_at_length_figures_for_lakes = data %>%
+<<<<<<< HEAD
   filter(`Water Body` == "Dawson", Species == "WSH")
 
 plot_age_at_length(age_at_length_figures_for_lakes, "Dawson Lake Saugeye") 
+=======
+  filter(`Water Body` == "Weldon Springs", Species == "WSH")
+
+plot_age_at_length(age_at_length_figures_for_lakes, "Weldon Springs Lake") 
+>>>>>>> 79a884f621d5ba7941e004db6b1931bf8ff59ea0
 
           
           

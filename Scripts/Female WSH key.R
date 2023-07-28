@@ -118,14 +118,3 @@ histStack(TL~Age, data=WSH.comb, breaks=seq(170,700,10), xlab="Total Length (mm)
 # Different colors indicate age
 #   Shows how much of the total for that length are a given age
 #   You can add a legend but the placement keeps covering parts of the figure 
-####################################################################
-
-# Plotting WSH.comb with ggplot for length at age
-ggplot(WSH.comb, aes(x=Age, y=TL))+
-  geom_point()+ geom_smooth(se = FALSE) +
-  ggtitle("Female Saugeye")+
-  xlab("Age (Ototlith)") + ylab("Total Length (mm)")+  
-  scale_x_continuous(breaks =  seq(0, 10, 1), limits = c(0, 10))+
-  scale_y_continuous(breaks =  seq(0, 750, 50), limits = c(100, 750))+
-  theme_classic()+ 
-  theme(plot.title = element_text(hjust = 0.5))
