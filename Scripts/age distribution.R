@@ -54,6 +54,8 @@ ggplot(ages, aes(x=`WS FINAL AGE`))+
       scale_x_continuous(labels = seq(0, 11, 1), breaks=seq(0,11,1))+
       scale_y_continuous(limits = c(0,120), breaks = seq(0,120, 10))+
       xlab("Whole Spine Age (yrs)")+ ylab("Frequency")
+
+# commit changes 
       
       
 
