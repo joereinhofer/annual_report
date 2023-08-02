@@ -94,8 +94,10 @@ hist(~Age, data=WSH.comb, breaks=0:10, xlim=c(0,11), ylim=c(0,400), xlab="Age (y
                                                                        # Add N for each age either onto
                                                                        #    the figure or in description
 plot(TL~jitter(Age), data=WSH.comb, ylab="Total Length (mm)", 
-                    xlab="Age (Otolith) (jittered)", 
-                    main="Saugey (WSH)") 
+                    xlab="Age (Otolith) (jittered)", main="Saugey (WSH)") 
+
+                   
+
 lines(mean~Age, data=WSH.sum, col="blue", lwd=2)
 # Plotting the fish as points
 # Jitter added so fish with same metrics aren't graphed directly on top one another
@@ -109,20 +111,18 @@ histStack(TL~Age, data=WSH.comb, breaks=seq(170,700,10), xlab="Total Length (mm)
                                       main = "Saugeye (WSH)", legend.pos = "topright")
 # Different colors indicate age
 #   Shows how much of the total for that length are a given age
-<<<<<<< HEAD
 #   You can add a legend but the placement keeps covering parts of the figure 
 ##############################################################
 
 # Plotting WSH.comb with ggplot for length at age
+
 library(ggplot2)
+
 ggplot(WSH.comb, aes(x=Age, y=TL))+
-geom_point()+ geom_smooth(se = FALSE) +
+geom_point()+ geom_smooth() +
   ggtitle("All Saugeye")+
   xlab("Age (Ototlith)") + ylab("Total Length (mm)")+  # note in report they are WS ages
   scale_x_continuous(breaks =  seq(0, 10, 1), limits = c(0, 10))+
   scale_y_continuous(breaks =  seq(0, 750, 50), limits = c(100, 750))+
   theme_classic()+ 
   theme(plot.title = element_text(hjust = 0.5))
-=======
-#   You can add a legend but the placement keeps covering parts of the figure 
->>>>>>> 79a884f621d5ba7941e004db6b1931bf8ff59ea0
