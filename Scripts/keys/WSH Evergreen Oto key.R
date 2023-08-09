@@ -35,7 +35,7 @@ data = readxl::read_excel("Data/JoeMasterData.xlsx",
 # Clean data
 Age_length_key_data = data %>%
   filter(Species == "WSH", `Water Body` == "Evergreen",
-         Sex == "Male") %>%
+         Sex == "Female") %>%
   rename(TL = `TL (mm)`, Age = `O FINAL AGE`) %>%
   select(TL, Age)
 
@@ -121,7 +121,7 @@ library(ggplot2)
 
 ggplot(WSH.comb, aes(x=Age, y=TL))+
   geom_point()+ geom_smooth() +
-  ggtitle("Evergreen Saugeye")+
+  ggtitle("Evergreen Female Saugeye")+
   xlab("Age (Ototlith)") + ylab("Total Length (mm)")+  # note in report they are WS ages
   scale_x_continuous(breaks =  seq(0, 10, 1), limits = c(0, 9))+
   scale_y_continuous(breaks =  seq(0, 750, 50), limits = c(100, 750))+
