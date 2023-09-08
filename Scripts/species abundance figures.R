@@ -31,14 +31,16 @@ Joe_Cool_water_fishes_data_Joe = mutate(Joe_Cool_water_fishes_data_Joe,
 
 # Plotting
 ggplot(Joe_Cool_water_fishes_data_Joe, aes(x=SAR_bins))+
-         labs(title = "Sauger", caption = "Mean = 322.7 ± 7.8 mm, Range = 169-506 mm, SD = 79.2 mm")+
+         labs(title = "Sauger")+
           geom_bar()+
            xlab("Total Length Bins (mm)")+
            ylab("Frequency")+
-         scale_y_continuous(breaks =  seq(0, 60, 10))+
+         scale_x_discrete(labels = c("100-200", "200-300", "300-400", "400-500", "500-600"))+
+         scale_y_continuous(limits = c(0,60), breaks =  seq(0, 60, 10))+
          theme_classic()+
          theme(plot.title = element_text(hjust = 0.5))
 
+# labs(title = "Sauger", caption = "Mean = 322.7 ± 7.8 mm, Range = 169-506 mm")
 
 ###############################################################################
 
@@ -76,10 +78,14 @@ ggplot(Joe_Cool_water_fishes_data_Joe, aes(x=WAE_bins))+
   geom_bar()+
   xlab("Total Length Bins (mm)")+
   ylab("Frequency")+
-  labs(title = "Walleye", caption = "Mean = 355.1 ± 4.6 mm, Range = 140-718 mm, SD = 127.5 mm")+
-  scale_y_continuous(breaks =  seq(0, 250, 20))+
+  labs(title = "Walleye")+
+  scale_y_continuous(limits = c(0, 260), breaks =  seq(0, 260, 20))+
+  scale_x_discrete(labels = c("100-200", "200-300", "300-400", "400-500", "500-600", "600-700", "700-800"))+
   theme_classic()+
   theme(plot.title = element_text(hjust = 0.5))
+
+# labs(title = "Walleye", caption = "Mean = 355.1 ± 4.6 mm, Range = 140-718 mm")
+
 ################################################################################
 
 # Saugeye (WSH)
@@ -115,7 +121,10 @@ ggplot(Joe_Cool_water_fishes_data_Joe, aes(x=WSH_bins))+
   geom_bar()+
   xlab("Total Length Bins (mm)")+
   ylab("Frequency")+
-  labs(title = "Saugeye", caption = "Mean = 446.2 ± 3.3 mm, Range = 174-695 mm, SD = 105.5 mm")+
-  scale_y_continuous(breaks =  seq(0, 400, 50))+
+  labs(title = "Saugeye")+
+  scale_y_continuous(limits = c(0,400), breaks =  seq(0, 400, 50))+
+  scale_x_discrete(labels = c("100-200", "200-300", "300-400", "400-500", "500-600", "600-700"))+
   theme_classic()+
   theme(plot.title = element_text(hjust = 0.5))
+
+# labs(title = "Saugeye", caption = "Mean = 446.2 ± 3.3 mm, Range = 174-695 mm")
