@@ -101,7 +101,7 @@ data = readxl::read_excel("Data/JoeMasterData.xlsx")
 
 # Clean data
 Joe_Cool_water_fishes_data_Joe = data %>%
-  filter(Species == "WSH") %>%
+  filter(Species == "WSH", `Water Body` == "Weldon Springs") %>%
   rename(WSH = `TL (mm)`)
 
 summary(Joe_Cool_water_fishes_data_Joe$WSH)
@@ -114,7 +114,12 @@ std.error(Joe_Cool_water_fishes_data_Joe$WSH)
 
 #Placing the data into size bins
 Joe_Cool_water_fishes_data_Joe = mutate(Joe_Cool_water_fishes_data_Joe, 
-                                        WSH_bins = cut(WSH, breaks = seq(0,800,100))) # seq(min value, max value, bin sizes)
+                                        WSH_bins = cut(WSH, breaks = seq(0,800,10))) # seq(min value, max value, bin sizes)
+# breaks = seq(0,800,50)
+# breaks = seq(0,800,25)
+# breaks = seq(0,800,20)
+# breaks = seq(0,800,10)
+
 
 # Plotting
 ggplot(Joe_Cool_water_fishes_data_Joe, aes(x=WSH_bins))+
@@ -122,9 +127,17 @@ ggplot(Joe_Cool_water_fishes_data_Joe, aes(x=WSH_bins))+
   xlab("Total Length Bins (mm)")+
   ylab("Frequency")+
   labs(title = "Saugeye")+
-  scale_y_continuous(limits = c(0,400), breaks =  seq(0, 400, 50))+
-  scale_x_discrete(labels = c("100-200", "200-300", "300-400", "400-500", "500-600", "600-700"))+
+  geom_text(stat = 'count', aes(label = ..count..))+
+  scale_y_continuous(limits = c(0,20), breaks =  seq(0, 20, 1))+
   theme_classic()+
   theme(plot.title = element_text(hjust = 0.5))
 
+
+
+# ggplot(data=dat, aes(x=Types, y=Number, fill=sample)) + 
+ # geom_bar(position = 'dodge', stat='identity') +
+ # geom_text(aes(label=Number), position=position_dodge(width=0.9), vjust=-0.25)
+
+
+# scale_x_discrete(labels = c("100-200", "200-300", "300-400", "400-500", "500-600", "600-700"))
 # labs(title = "Saugeye", caption = "Mean = 446.2 ± 3.3 mm, Range = 174-695 mm")
